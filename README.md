@@ -10,6 +10,6 @@ This repository includes the following sections:
 - Django JWT Authentication Part 4 - Social Auth with Google OAuth2
 - Django JWT Authentication Part 5 - Social Auth with Facebook OAuth2
 
-Feel free to use this repository as a reference for your Django and React JWT authentication project.
+Feel free to use this repository as a reference for your Django JWT authentication project.
 
 Happy coding!
