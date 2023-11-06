@@ -140,13 +140,16 @@ SIMPLE_JWT = {
    'AUTH_HEADER_TYPES': ('JWT',),
 }
 
-# Email
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'djangotest810@gmail.com'
+# Email configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  
+EMAIL_PORT = 587 
+EMAIL_USE_TLS = True  
+EMAIL_HOST_USER = 'djangotest810@gmail.com'  
 EMAIL_HOST_PASSWORD = 'xftxrrxwgaprncyx'
-EMAIL_USE_TLS = True
+
+# Default "from" address for sent emails
+DEFAULT_FROM_EMAIL = 'djangotest810@gmail.com'
 
 # djoser
 DJOSER = {
@@ -160,5 +163,9 @@ DJOSER = {
     'USERNAME_RESET_CONFIRM_URL':'email/reset/confirm/{uid},{token}',
     'ACTIVATION_URL':'activate/{uid},{token}',
     'SEND_ACTIVATION_EMAIL':True,
-    'SERIALIZERS':{}
+    'SERIALIZERS':{
+        'user_create': 'accounts.serializers.UserCreateSerializer',
+        'user': 'accounts.serializers.UserCreateSerializer',
+        'user_delete': 'djoser.serializers.UserDeleteSerializer',
+    }
 }    
